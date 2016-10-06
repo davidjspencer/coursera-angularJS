@@ -58,7 +58,7 @@ ul > li {
 .form-group {
   display: block;
 }
-span {
+span { /* Short name */
   font-weight: bold;
   color: blue;
 }
