@@ -29,7 +29,7 @@
 	function NarrowItDownController(MenuSearchService) {
 		
 		var narrowItDown = this;
-		//narrowItDown.found;
+		
 		narrowItDown.narrowIt = function() {
 			
 
