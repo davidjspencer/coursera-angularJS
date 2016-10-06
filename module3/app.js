@@ -29,19 +29,24 @@
 	function NarrowItDownController(MenuSearchService) {
 		
 		var narrowItDown = this;
-		
+		narrowItDown.searchTerm = '';
+		narrowItDown.nothingFound = '';
+
 		narrowItDown.narrowIt = function() {
 			
 
-			if (narrowItDown.input != '') {
-				narrowItDown.found = MenuSearchService.getMatchedMenuItems(narrowItDown.input);
+			if (narrowItDown.searchTerm) {
+				narrowItDown.found = MenuSearchService.getMatchedMenuItems(narrowItDown.searchTerm.toLowerCase());
 				narrowItDown.found.then(function (response) {
 					narrowItDown.found = response;
 				}).catch(function (error) {
 
 				});
+			
 			} else {
+				
 				narrowItDown.found = [];
+				narrowItDown.nothingFound = 'Nothing found';
 			}
 		};
 
