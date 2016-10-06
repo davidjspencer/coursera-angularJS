@@ -11,7 +11,7 @@
 		var ddo = {
 			templateUrl: 'foundItems.html',
 			scope: {
-				foundItems: '<',
+				found: '<',
 				onRemove: '&'
 			},
 			controller: FoundItemsDirectiveController,
@@ -61,15 +61,15 @@
 					url: (ApiBasePath + "/menu_items.json")
 			}).then(function(response) {
 					var items = response.data.menu_items;
-					var foundItem = [];
+					var foundItems = [];
 
 					for(var i = 0; i < items.length; i++) {
 						var item = items[i]
 						if (item.description.toLowerCase().indexOf(searchTerm) !== -1) {
-							foundItem.push(item);
+							foundItems.push(item);
 						}
 					}
-					return foundItem;
+					return foundItems;
 			})
 			.catch(function(error) {
 				return [];
