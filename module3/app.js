@@ -39,6 +39,7 @@
 				narrowItDown.found = MenuSearchService.getMatchedMenuItems(narrowItDown.searchTerm.toLowerCase());
 				narrowItDown.found.then(function (response) {
 					narrowItDown.found = response;
+					narrowItDown.nothingFound = '';
 				}).catch(function (error) {
 
 				});
